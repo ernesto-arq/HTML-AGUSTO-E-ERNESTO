@@ -1,0 +1,291 @@
+<!-- PÁGINA DE LISTAGEM DOS INCIDENTES DO USUÁRIO COMUM DA APLICAÇÃO -->
+
+<!-- 
+	NA PASTA JS EXISTE O SCRIPT MEU SCRIPT.JS ONDE EXISTE O CONTROLE DE ACESSO A FUNCIONALIDADE REGULARIZAR INCIDENTE CUJO ACESSO É RESTRITO AOS ANALISTAS.
+	
+	UTILIZAR A SENHA: 12345
+-->
+
+<!doctype html>
+<html>
+<head>
+	<title>Listar incidente</title>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+		
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">	
+	<script type="text/javascript" src="js/meuscript.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<header>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			
+		    <div class="navbar-header">		    	
+
+		    	<!-- SMARTPHONE -->
+				<button type="button" style="margin-top:25px" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+					<span style="background-color:#fff" class="icon-bar"></span>
+					<span style="background-color:#fff" class="icon-bar"></span>
+					<span style="background-color:#fff" class="icon-bar"></span>
+				</button>
+				
+		    </div>
+
+			<div class="collapse navbar-collapse" id="menu_lista1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="index.html">Home</a></li>
+					<li class="nav-item dropdown">
+						<a href="" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Incidente<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="novoincidente.html">Novo</a></li>
+							<li><a href="listarincidente.html">Pesquisar</a></li>
+							<li><a href="#" onclick="liberarmenu()">Regularizar</a></li>
+						</ul>
+					</li>					
+					<li class="dropdown"><a href="duvidasoperacionais.html">Dúvidas operacionais</a></li>
+					<li class="dropdown" data-toggle="modal" data-target="#Sobre1"><a href="#" data-toggle="modal" data-target="#sobre1">Sobre</a></li>					
+				</ul>
+
+				<div class="modal fade" id="Sobre1" tabindex="-1" role="dialog" aria-labelledby="Sobre1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel1">GED Service Desk</h4>
+							</div>
+							<div class="modal-body">
+								<h4>Data da versão: 2019.03.31</h4>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default center-block" data-dismiss="modal">Fechar</button> 								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</nav>
+</header>
+
+<div>
+	<div class="container">
+		
+		<div class="row">			
+			<div class="col-sm-4 col-md-4">				
+				<img src="img/icone2.png" align="left"/>
+				<h3>Meus incidentes</h3>
+				</br>
+			</div>
+		</div>	
+		
+		<div class="row"> 
+			<div class="col-sm-4 col-md-4"> 
+				<div class="form-group input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+					<input name="consulta" id="txt_consulta" placeholder="A solicitação contém" type="text" class="form-control">
+				</div> 
+			</div> 
+
+			<div class="col-sm-4 col-md-4"> 
+				<div class="form-group"> 
+					<select class="form-control" id="statusincidente">						
+						<option value="1" selected>Incidentes em aberto</option>
+						<option value="2">Incidentes fechados</option>
+						<option value="3">Qualquer estado</option>
+					</select> 
+				</div> 
+			</div> 
+			
+			<div class="col-sm-4 col-md-4">
+				<div class="form-group"> 
+					<select class="form-control" id="periodoincidente">						
+						<option value="1" selected>Últimas 24 horas</option>
+						<option value="2">Última semana</option>
+						<option value="2">Último mês</option>
+						<option value="3">Último ano</option>
+					</select> 
+				</div>			
+				
+			</div> 
+		</div>
+	</div>
+</div>
+
+
+<div>
+	<div class="container">		
+		<div class="row">	
+			<table id="tabela" class="table table-hover">
+			  <thead>
+				<tr>
+				  <th scope="col">Referência</th>
+				  <th scope="col">Título</th>
+				  <th scope="col">Data</th>
+				  <th scope="col">Status</th>
+				</tr>
+			  </thead>
+			  <tbody>
+				<tr>
+				  <th scope="row"><a href="#" data-toggle="modal" data-target="#basicModal1">ST-0001</a></th>
+				  <td>Falha na pesquisa de documento</td>
+				  <td>10/03/2017</td>
+				  <td>Pendente</td>
+				</tr>
+				<tr>
+				  <th scope="row"><a href="#" data-toggle="modal" data-target="#basicModal2">ST-0002</a></th>
+				  <td>Lentidão na inclusão de arquivos</td>
+				  <td>06/02/2017</td>
+				  <td>Em atendimento</td>
+				</tr>
+				<tr>
+				  <th scope="row"><a href="#" data-toggle="modal" data-target="#basicModal3">ST-0003</a></th>
+				  <td scope="row">Botão não está respondendo</td>
+				  <td>01/02/2017</td>
+				  <td>Fechado</td>
+				</tr>
+			  </tbody>
+			  <th>
+			</table>
+			<nav aria-label="Navegação pela lista de incidentes">
+			  <ul class="pagination justify-content-center">
+				<li class="page-item disabled">
+				  <a class="page-link" href="#" tabindex="-1">Anterior</a>
+				</li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+				  <a class="page-link" href="#">Próximo</a>
+				</li>
+			  </ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<script>
+$('input#txt_consulta').quicksearch('table#tabela tbody tr');
+</script>
+
+<!-- modal incidente ST-0001 -->
+<div class="modal fade" id="basicModal1" tabindex="-1" role="dialog" aria-labelledby="basicModal1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">        
+		<h4 class="modal-title">Detalhes do incidente</h4>		
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="referencia">Referência</label>
+		<input type="text" class="form-control" value="ST-0001" disabled>
+		</br>
+		<label for="solicitante">Solicitante</label>
+		<input type="text" class="form-control" value="Carlos Eduardo" disabled> 
+		</br>
+		<label for="tituloincidente">Descreva o problema de forma resumida</label>
+		<input type="text" class="form-control" value="Falha na pesquisa de documento" disabled>
+		</br>
+		<label for="detalhamento">Detalhamento</label>
+		<textarea class="form-control" rows="3" disabled>Ao pesquisar pelo documento id 192752 o sistema não exibe a imagem</textarea>	
+		</br>
+		<label for="anexo">Anexo(s)</label></br>
+		<a href="img/imagemtestes.jpg" download="Anexo.jpg">imagemtestes.jpg</a>
+		</br></br>
+		<label for="solucao">Solução</label>
+		<textarea class="form-control" rows="3" disabled></textarea>
+	  
+	  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default center-block" data-dismiss="modal">Fechar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal incidente ST-0002 -->
+<div class="modal fade" id="basicModal2" tabindex="-1" role="dialog" aria-labelledby="basicModal2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">        
+		<h4 class="modal-title">Detalhes do incidente</h4>		
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="referencia">Referência</label>
+		<input type="text" class="form-control" value="ST-0002" disabled>
+		</br>
+		<label for="solicitante">Solicitante</label>
+		<input type="text" class="form-control" value="Maria Clara" disabled> 
+		</br>
+		<label for="tituloincidente">Descreva o problema de forma resumida</label>
+		<input type="text" class="form-control" value="Lentidão na inclusão de arquivos" disabled>
+		</br>
+		<label for="detalhamento">Detalhamento</label>
+		<textarea class="form-control" rows="3" disabled>Ao tentar fazer o upload de um arquivo de 20 MB o sistema fica processamento por mais de 30 minutos e não conclui o processo</textarea>
+		</br>
+		<label for="anexo">Anexo(s)</label></br>
+		<a href="img/imagemtestes.jpg" download="Anexo.jpg">imagemtestes.jpg</a>
+		</br></br>
+		<label for="solucao">Solução</label>		
+		<textarea class="form-control" rows="3" disabled></textarea>
+	  
+	  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default center-block" data-dismiss="modal">Fechar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal incidente ST-0003 -->
+<div class="modal fade" id="basicModal3" tabindex="-1" role="dialog" aria-labelledby="basicModal3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">        
+		<h4 class="modal-title">Detalhes do incidente</h4>		
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="referencia">Referência</label>
+		<input type="text" class="form-control" value="ST-0003" disabled>
+		</br>
+		<label for="solicitante">Solicitante</label>
+		<input type="text" class="form-control" value="Andrea Ribeiro" disabled> 
+		</br>
+		<label for="tituloincidente">Descreva o problema de forma resumida</label>
+		<input type="text" class="form-control" value="Botão salvar não habilita" disabled>
+		</br>
+		<label for="detalhamento">Detalhamento</label>		
+		<textarea class="form-control" rows="3" disabled>Ao tentar criar uma pasta virtual, após preencher todos os dados o botão Salvar não habilita</textarea>
+		</br>
+		<label for="anexo">Anexo(s)</label></br>
+		<a href="img/imagemtestes.jpg" download="Anexo.jpg">imagemtestes.jpg</a>
+		</br></br>
+		<label for="solucao">Solução</label>		
+		<textarea class="form-control" rows="3" disabled>Foi realizada a publicação de uma nova versão corretiva</textarea>
+	  
+	  </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default center-block" data-dismiss="modal">Fechar</button>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!-- PÁGINA DE CADASTRO DOS INCIDENTES DO USUÁRIO DA APLICAÇÃO -->
+
+<!-- 
+	NA PASTA JS EXISTE O SCRIPT MEU SCRIPT.JS ONDE EXISTE O CONTROLE DE ACESSO A FUNCIONALIDADE REGULARIZAR INCIDENTE CUJO ACESSO É RESTRITO AOS ANALISTAS.
+	
+	UTILIZAR A SENHA: 12345
+	-->
+
+<!doctype html>
+<html>
+<head>
+	<title>Novo incidente</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">	
+	<script type="text/javascript" src="js/meuscript.js"></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<header>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			
+		    <div class="navbar-header">		    	
+
+		    	<!-- SMARTPHONE -->
+				<button type="button" style="margin-top:25px" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+					<span style="background-color:#fff" class="icon-bar"></span>
+					<span style="background-color:#fff" class="icon-bar"></span>
+					<span style="background-color:#fff" class="icon-bar"></span>
+				</button>
+				
+		    </div>
+
+			<div class="collapse navbar-collapse" id="menu_lista1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="index.html">Home</a></li>
+					<li class="nav-item dropdown">
+						<a href="" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Incidente<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="novoincidente.html">Novo</a></li>
+							<li><a href="listarincidente.html">Pesquisar</a></li>
+							<li><a href="#" onclick="liberarmenu()">Regularizar</a></li>
+						</ul>
+					</li>					
+					<li class="dropdown"><a href="duvidasoperacionais.html">Dúvidas operacionais</a></li>
+					<li class="dropdown" data-toggle="modal" data-target="#Sobre1"><a href="#" data-toggle="modal" data-target="#sobre1">Sobre</a></li>					
+				</ul>
+
+				<div class="modal fade" id="Sobre1" tabindex="-1" role="dialog" aria-labelledby="Sobre1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel1">GED Service Desk</h4>
+							</div>
+							<div class="modal-body">
+								<h4>Data da versão: 2019.03.31</h4>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default center-block" data-dismiss="modal">Fechar</button> 								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</nav>
+</header>
+
+<div class="container">
+
+	<div class="row">			
+		<div class="col-sm-4 col-md-4">				
+				<img src="img/icone.png" align="left"/>
+				<h3>Relatar um incidente</h3>
+		</div>
+
+		<div class="col-sm-8 col-md-8">
+			<form>
+				<div class="form-group">
+					<label for="solicitante">Solicitante</label>
+				<input type="text" class="form-control" id="solicitante" placeholder="nome e sobrenome">
+				</div>				
+				<div class="form-group">
+					<label for="tituloincidente">Descreva o problema de forma resumida</label>
+					<input type="text" class="form-control" id="tituloincidente" placeholder="descrição">
+				</div>				
+				<div class="form-group">
+					<label for="detalhamentoincidente">Detalhamento</label>
+					<textarea class="form-control" id="detalhesincidents" rows="3" placeholder="cenário do incidente"></textarea>
+				</div>				
+				<div class="custom-file">					
+					<label class="custom-file-label" for="uploadarquivos">Anexo(s) (opcional)</label>
+					<input type="file" id="uploadarquivos" class="custom-file-input" multiple>
+				</div>					
+				</br>
+
+				<div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">		
+					<div class="btn-group" role="group" aria-label="grupo 1">							
+						<a href="" class="btn btn-primary active" role="button" aria-pressed="true">Criar</a>						
+					</div>					
+					<div class="btn-group" role="group" aria-label="grupo 2">						
+						<a href="index.html" class="btn btn-secondary active" role="button" aria-pressed="true">Cancelar</a>						
+					</div>					
+				</div>																
+			</form>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

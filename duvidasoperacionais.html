@@ -1,0 +1,132 @@
+<!-- PÁGINA DE CADASTRO DOS INCIDENTES PELO USUÁRIO COMUM DA APLICAÇÃO -->
+
+<!-- 
+	NA PASTA JS EXISTE O SCRIPT MEU SCRIPT.JS ONDE EXISTE O CONTROLE DE ACESSO A FUNCIONALIDADE REGULARIZAR INCIDENTE CUJO ACESSO É RESTRITO AOS ANALISTAS.
+	
+	UTILIZAR A SENHA: 12345
+-->
+
+<!doctype html>
+<html>
+<head>
+	<title>Novo incidente</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<script type="text/javascript" src="js/meuscript.js"></script>	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<header>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			
+		    <div class="navbar-header">		    	
+
+		    	<!-- SMARTPHONE -->
+				<button type="button" style="margin-top:25px" class="navbar-toggle collapsed" data-toggle="collapse" aria-expanded="false">
+					<span style="background-color:#fff" class="icon-bar"></span>
+					<span style="background-color:#fff" class="icon-bar"></span>
+					<span style="background-color:#fff" class="icon-bar"></span>
+				</button>
+				
+		    </div>
+
+			<div class="collapse navbar-collapse" id="menu_lista1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"><a href="index.html">Home</a></li>
+					<li class="nav-item dropdown">
+						<a href="" class="dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Incidente<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="novoincidente.html">Novo</a></li>
+							<li><a href="listarincidente.html">Pesquisar</a></li>
+							<li><a href="#" onclick="liberarmenu()">Regularizar</a></li>
+						</ul>
+					</li>					
+					<li class="dropdown"><a href="duvidasoperacionais.html">Dúvidas operacionais</a></li>
+					<li class="dropdown" data-toggle="modal" data-target="#Sobre1"><a href="#" data-toggle="modal" data-target="#sobre1">Sobre</a></li>					
+				</ul>
+
+				<div class="modal fade" id="Sobre1" tabindex="-1" role="dialog" aria-labelledby="Sobre1" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel1">GED Service Desk</h4>
+							</div>
+							<div class="modal-body">
+								<h4>Data da versão: 2019.03.31</h4>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default center-block" data-dismiss="modal">Fechar</button> 								
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</nav>
+</header>
+
+<div class="container">
+
+	<div class="row">			
+		<div class="col-sm-4 col-md-4">				
+				<img src="img/icone3.png" align="left"/>
+				<h3>Dúvidas Operacionais</h3>
+		</div>
+
+		<div class="col-sm-8 col-md-8">
+			</br>
+			<p>1 - Como é definido o perfil de acesso?</p>
+			<p>O acesso ao Sistema de Gerenciamento Eletrônico de Documentos é baseado na lotação do usuário e função ou função de substituição.</p> 
+			 
+			<p>2 - Como cadastrar um dossiê?</p>
+			<p>Para cadastrar um novo dossiê no Sistema de Gerenciamento Eletrônico de Documentos, deve-se acessar a funcionalidade "Produção -> Pasta Virtual". 
+			Em seguida clicar no botão "Novo", selecionar o Tipo de Pasta, preencher as chaves do tipo documental e clicar no botão "Salvar".</p>
+			 
+			<p>3 - Como digitalizar um documento?</p>
+			<p>Para capturar um documento no Sistema de Gerenciamento Eletrônico de Documentos, deve-se acessar a funcionalidade "Produção -> Digitalização -> Digitalização Pasta Virtual". 
+				Em seguida pesquisar pelo dossiê ao qual será associada a imagem, selecionar a pasta.  Na tela de digitalização, selecionar o tipo documental, preencher as chaves do tipo 
+				documental, realizar a captura e clicar no botão "Confirmar".</p>
+			 
+			<p>4 - Como importar um documento?</p>
+			<p>Para importar um documento no Sistema de Gerenciamento Eletrônico de Documentos, deve-se acessar a funcionalidade "Produção -> Importação -> Importação Pasta Virtual". 
+			Em seguida pesquisar pelo dossiê ao qual será associada a imagem, selecionar a pasta.  Na tela de importação, selecionar o tipo documental, preencher as chaves do tipo documental,
+			realizar o uploado do arquivo e clicar no botão "Confirmar".</p>
+			 
+			<p>5 - Como gerar um relatório?</p>
+			<p>Para gerar um relatório no Sistema de Gerenciamento Eletrônico de Documentos, deve-se acessar a funcionalidade "Relatório -> Relatório Online" e selecionar o Grupo do Relatório 
+			e o Relatório desejado. Ao ser selecionado o relatório, deve-se aplicar os filtros exibidos e clicar no botão "Imprimir".</p>
+			 
+			<p>6 - Como enviar um documento para guarda física?</p>
+			<p>Para enviar um documento digitalizado ou importado para guarda física obrigatória, deve-se acessar a funcionalidade "Produção -> Controle de Arquivo -> Enviar Documento". 
+			Em seguida informar o id do documento e clicar no botão "Enviar".</p>
+			 
+			<p>7 - Como validar um documento digitalmente?</p>
+			<p>Para realizar a validação digital de um documento digitalizado ou importado, deve-se acessar a funcionalidade "Processamento -> Validação Digital". Em seguida deve-se visualizar
+			o documento por completo, inserir as considerações se necessário e clicar no botão "Validar".</p>
+			 
+			<p>8 - Como cancelar um documento inserido por engano?</p>
+			<p>Para cancelar um documento digitalizado ou importado incorretamente, deve-se acessar a funcionalidade "Processamento -> Outros -> Não Financeiro -> Excluir Documento". 
+			Em seguida deve-se pesquisar pelo documento informado o id, clicar no botão "Cancelar", informar a justificativa e clicar no botão "Confirmar".</p>
+			 
+			<p>9 - Como baixar todos os documentos de uma pasta?</p>
+			<p>Para realizar o download de todos os documentos de um dossiê, deve-se acessar a funcionalidade "Pesquisa -> Simples". Em seguida deve-se consultar pelo dossiê desejado e no 
+			retorno da pesquisa clicar no botão "Download".</p>
+			 
+			<p>10 - Como transferir um documento entre pastas?</p>
+			<p>Para migrar um documento entre dossiês de unidades distintas, deve-se acessar a funcionalidade "Processamento -> Outros -> Não Financeiro -> Mover documentos entre pastas". 
+			Em seguida deve-se pesquisar pelo documento, informar o id da pasta de destino e clicar no botão "Mover documentos".</p>
+  
+		</div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

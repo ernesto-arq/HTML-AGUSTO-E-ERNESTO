@@ -1,0 +1,2 @@
+1- Implementação dos codigos necessarios para deixar o prototipo igual ao modelo
+2- utilizar bootstrap

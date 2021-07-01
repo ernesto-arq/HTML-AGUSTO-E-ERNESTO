@@ -1,0 +1,7 @@
+/*-- ESTILOS APLICADOS A PÁGINA INDEX DA APLICAÇÃO */
+
+footer { background-color: #222; min-height: 180px; color:#999; padding:40px; } /* #222 é cinza de tonalidade escura, #999 é cinza mais claro */
+#principal { padding: 50px; background: #085394;  }
+#secundario { margin: 30px 0; }
+.textoapresentacao {color: white; }
+
